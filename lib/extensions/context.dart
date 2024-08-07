@@ -28,10 +28,6 @@ extension ContextExtensions on BuildContext {
 
   double get navigationBarHeight => MediaQuery.of(this).padding.bottom;
 
-  ThemeData get theme => Theme.of(this);
-
-  TextTheme get textTheme => Theme.of(this).textTheme;
-
   DefaultTextStyle get defaultTextStyle => DefaultTextStyle.of(this);
 
   FormState? get formState => Form.of(this);
@@ -39,6 +35,16 @@ extension ContextExtensions on BuildContext {
   ScaffoldState get scaffoldState => Scaffold.of(this);
 
   OverlayState? get overlayState => Overlay.of(this);
+
+  /////////////////////////////////////////////////////////////////////
+  // theme
+  /////////////////////////////////////////////////////////////////////
+
+  ThemeData get theme => Theme.of(this);
+
+  TextTheme get textTheme => Theme.of(this).textTheme;
+
+  ColorScheme get colorScheme => Theme.of(this).colorScheme;
 
   Color get primaryColor => theme.primaryColor;
 
@@ -69,26 +75,6 @@ extension ContextExtensions on BuildContext {
   bool get canPop => Navigator.canPop(this);
 
   void pop<T extends Object>([T? result]) => Navigator.pop(this, result);
-
-  TargetPlatform get platform => Theme.of(this).platform;
-
-  /// Return true if the platform is Android
-  bool get isAndroid => platform == TargetPlatform.android;
-
-  /// Return true if the platform is iOS
-  bool get isIOS => platform == TargetPlatform.iOS;
-
-  /// Return true if the platform is MacOS
-  bool get isMacOS => platform == TargetPlatform.macOS;
-
-  /// Return true if the platform is Windows
-  bool get isWindows => platform == TargetPlatform.windows;
-
-  /// Return true if the platform is Fuchsia
-  bool get isFuchsia => platform == TargetPlatform.fuchsia;
-
-  /// Return true if the platform is Linux
-  bool get isLinux => platform == TargetPlatform.linux;
 
   /// Open Drawer
   void openDrawer() => Scaffold.of(this).openDrawer();

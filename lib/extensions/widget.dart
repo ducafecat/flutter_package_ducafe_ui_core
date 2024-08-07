@@ -836,6 +836,7 @@ extension WidgetExtensions on Widget {
           );
   }
 
+  /// 约束
   Widget constrained({
     Key? key,
     double? width,
@@ -873,6 +874,29 @@ extension WidgetExtensions on Widget {
             child: this,
           );
   }
+
+  /// 约束 宽高
+  Widget tight({
+    double? width,
+    double? height,
+    Key? key,
+  }) =>
+      ConstrainedBox(
+        key: key,
+        constraints: BoxConstraints.tightFor(width: width, height: height),
+        child: this,
+      );
+
+  /// 约束 宽高 size
+  Widget tightSize(
+    double size, {
+    Key? key,
+  }) =>
+      ConstrainedBox(
+        key: key,
+        constraints: BoxConstraints.tightFor(width: size, height: size),
+        child: this,
+      );
 
   Widget width(
     double width, {

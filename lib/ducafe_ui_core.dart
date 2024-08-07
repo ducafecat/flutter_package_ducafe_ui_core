@@ -5,6 +5,7 @@ import 'dart:async';
 import 'dart:collection';
 import 'dart:math';
 import 'dart:ui';
+import 'dart:developer' as devtools show log;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
@@ -19,8 +20,13 @@ part 'extensions/list.dart';
 part 'extensions/text.dart';
 part 'extensions/text_span.dart';
 part 'extensions/widget.dart';
-part 'extensions/size.dart';
+part 'extensions/screen_util.dart';
 part 'extensions/context.dart';
+part 'extensions/duration.dart';
+part 'extensions/dev_tools.dart';
+part 'extensions/platform.dart';
+part 'extensions/padding.dart';
+part 'extensions/sized_box.dart';
 
 part 'utils/ui.dart';
 part 'utils/screen/screen_util.dart';

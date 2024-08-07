@@ -24,6 +24,31 @@ extension ListExtensions<E> on List<Widget> {
             : this,
       );
 
+  /// 含有间距的Column
+  Widget toColumnSpace({
+    Key? key,
+    MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+    MainAxisSize mainAxisSize = MainAxisSize.max,
+    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+    TextDirection? textDirection,
+    VerticalDirection verticalDirection = VerticalDirection.down,
+    TextBaseline? textBaseline,
+    double space = 10.0,
+  }) =>
+      Column(
+        key: key,
+        mainAxisAlignment: mainAxisAlignment,
+        mainAxisSize: mainAxisSize,
+        crossAxisAlignment: crossAxisAlignment,
+        textDirection: textDirection,
+        verticalDirection: verticalDirection,
+        textBaseline: textBaseline,
+        children: isNotEmpty
+            ? (expand((child) => [child, SizedBox(height: space)]).toList()
+              ..removeLast())
+            : this,
+      );
+
   Widget toRow({
     Key? key,
     MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
@@ -44,6 +69,30 @@ extension ListExtensions<E> on List<Widget> {
         textBaseline: textBaseline,
         children: separator != null && isNotEmpty
             ? (expand((child) => [child, separator]).toList()..removeLast())
+            : this,
+      );
+
+  Widget toRowSpace({
+    Key? key,
+    MainAxisAlignment mainAxisAlignment = MainAxisAlignment.start,
+    MainAxisSize mainAxisSize = MainAxisSize.max,
+    CrossAxisAlignment crossAxisAlignment = CrossAxisAlignment.center,
+    TextDirection? textDirection,
+    VerticalDirection verticalDirection = VerticalDirection.down,
+    TextBaseline? textBaseline,
+    double space = 10.0,
+  }) =>
+      Row(
+        key: key,
+        mainAxisAlignment: mainAxisAlignment,
+        mainAxisSize: mainAxisSize,
+        crossAxisAlignment: crossAxisAlignment,
+        textDirection: textDirection,
+        verticalDirection: verticalDirection,
+        textBaseline: textBaseline,
+        children: isNotEmpty
+            ? (expand((child) => [child, SizedBox(width: space)]).toList()
+              ..removeLast())
             : this,
       );
 
