@@ -2,39 +2,33 @@ part of '../ducafe_ui_core.dart';
 
 // Context Extensions
 extension ContextExtensions on BuildContext {
-  Size size() => MediaQuery.of(this).size;
+  /////////////////////////////////////////////////////////////////////
+  // ScreenUtil 屏幕尺寸信息
+  /////////////////////////////////////////////////////////////////////
 
-  double width() => MediaQuery.of(this).size.width;
+  double get screenWidth => ScreenUtil().screenWidth;
 
-  double height() => MediaQuery.of(this).size.height;
+  double get screenHeight => ScreenUtil().screenHeight;
 
-  double pixelRatio() => MediaQuery.of(this).devicePixelRatio;
+  double get bottomBarHeight => ScreenUtil().bottomBarHeight;
 
-  double screenWidth() => ScreenUtil().screenWidth;
+  double get statusBarHeight => ScreenUtil().statusBarHeight;
 
-  double screenHeight() => ScreenUtil().screenHeight;
+  double get textScaleFactor => ScreenUtil().textScaleFactor;
 
-  double bottomBarHeight() => ScreenUtil().bottomBarHeight;
+  double get scaleWidth => ScreenUtil().scaleWidth;
 
-  double statusBarHeight() => ScreenUtil().statusBarHeight;
+  double get scaleHeight => ScreenUtil().scaleHeight;
 
-  double textScaleFactor() => ScreenUtil().textScaleFactor;
+  /////////////////////////////////////////////////////////////////////
+  // 屏幕方向
+  /////////////////////////////////////////////////////////////////////
 
-  double scaleWidth() => ScreenUtil().scaleWidth;
+  Orientation get orientation => MediaQuery.of(this).orientation;
 
-  double scaleHeight() => ScreenUtil().scaleHeight;
+  bool get isLandscape => orientation == Orientation.landscape;
 
-  Brightness platformBrightness() => MediaQuery.of(this).platformBrightness;
-
-  double get navigationBarHeight => MediaQuery.of(this).padding.bottom;
-
-  DefaultTextStyle get defaultTextStyle => DefaultTextStyle.of(this);
-
-  FormState? get formState => Form.of(this);
-
-  ScaffoldState get scaffoldState => Scaffold.of(this);
-
-  OverlayState? get overlayState => Overlay.of(this);
+  bool get isPortrait => orientation == Orientation.portrait;
 
   /////////////////////////////////////////////////////////////////////
   // theme
@@ -58,6 +52,22 @@ extension ContextExtensions on BuildContext {
 
   Color get iconColor => theme.iconTheme.color!;
 
+  /////////////////////////////////////////////////////////////////////
+  // 其它
+  /////////////////////////////////////////////////////////////////////
+
+  Brightness platformBrightness() => MediaQuery.of(this).platformBrightness;
+
+  double get navigationBarHeight => MediaQuery.of(this).padding.bottom;
+
+  DefaultTextStyle get defaultTextStyle => DefaultTextStyle.of(this);
+
+  FormState? get formState => Form.of(this);
+
+  ScaffoldState get scaffoldState => Scaffold.of(this);
+
+  OverlayState? get overlayState => Overlay.of(this);
+
   void requestFocus(FocusNode focus) {
     FocusScope.of(this).requestFocus(focus);
   }
@@ -65,12 +75,6 @@ extension ContextExtensions on BuildContext {
   void unFocus(FocusNode focus) {
     focus.unfocus();
   }
-
-  Orientation get orientation => MediaQuery.of(this).orientation;
-
-  bool get isLandscape => orientation == Orientation.landscape;
-
-  bool get isPortrait => orientation == Orientation.portrait;
 
   bool get canPop => Navigator.canPop(this);
 
