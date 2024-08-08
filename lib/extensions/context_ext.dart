@@ -34,23 +34,23 @@ extension ContextExtensions on BuildContext {
   // theme
   /////////////////////////////////////////////////////////////////////
 
-  ThemeData get theme => Theme.of(this);
+  // ThemeData get theme => Theme.of(this);
 
-  TextTheme get textTheme => Theme.of(this).textTheme;
+  // TextTheme get textTheme => Theme.of(this).textTheme;
 
-  ColorScheme get colorScheme => Theme.of(this).colorScheme;
+  // ColorScheme get colorScheme => Theme.of(this).colorScheme;
 
-  Color get primaryColor => theme.primaryColor;
+  // Color get primaryColor => theme.primaryColor;
 
-  Color get accentColor => theme.colorScheme.secondary;
+  // Color get accentColor => theme.colorScheme.secondary;
 
-  Color get scaffoldBackgroundColor => theme.scaffoldBackgroundColor;
+  // Color get scaffoldBackgroundColor => theme.scaffoldBackgroundColor;
 
-  Color get cardColor => theme.cardColor;
+  // Color get cardColor => theme.cardColor;
 
-  Color get dividerColor => theme.dividerColor;
+  // Color get dividerColor => theme.dividerColor;
 
-  Color get iconColor => theme.iconTheme.color!;
+  // Color get iconColor => theme.iconTheme.color!;
 
   /////////////////////////////////////////////////////////////////////
   // 其它
