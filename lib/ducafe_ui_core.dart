@@ -29,6 +29,7 @@ part 'extensions/padding_ext.dart';
 part 'extensions/sized_box_ext.dart';
 part 'extensions/media_query_ext.dart';
 part 'extensions/string_ext.dart';
+part 'extensions/colors_ext.dart';
 
 part 'utils/ui.dart';
 part 'utils/screen/screen_util.dart';
