@@ -7,6 +7,7 @@ import 'dart:math';
 import 'dart:ui';
 import 'dart:developer' as devtools show log;
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ part 'extensions/sized_box_ext.dart';
 part 'extensions/media_query_ext.dart';
 part 'extensions/string_ext.dart';
 part 'extensions/colors_ext.dart';
+part 'extensions/themes_ext.dart';
 
 part 'utils/ui.dart';
 part 'utils/screen/screen_util.dart';
