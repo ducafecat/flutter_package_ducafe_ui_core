@@ -96,6 +96,7 @@ extension ListExtensions<E> on List<Widget> {
             : this,
       );
 
+  /// 转 Stack
   Widget toStack({
     Key? key,
     AlignmentGeometry alignment = AlignmentDirectional.topStart,
@@ -110,6 +111,17 @@ extension ListExtensions<E> on List<Widget> {
         textDirection: textDirection,
         fit: fit,
         clipBehavior: clipBehavior,
+        children: this,
+      );
+
+  /// 转 ListView
+  Widget toListView({
+    Key? key,
+    Axis scrollDirection = Axis.vertical,
+  }) =>
+      ListView(
+        key: key,
+        scrollDirection: scrollDirection,
         children: this,
       );
 

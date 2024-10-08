@@ -25,6 +25,32 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 对齐
+  Widget align(
+    AlignmentGeometry alignment, {
+    Key? key,
+  }) =>
+      Align(
+        key: key,
+        alignment: alignment,
+        child: this,
+      );
+
+  /// 对齐 中间
+  Widget alignCenter() => align(Alignment.center);
+
+  /// 对齐 左边
+  Widget alignLeft() => align(Alignment.centerLeft);
+
+  /// 对齐 右边
+  Widget alignRight() => align(Alignment.centerRight);
+
+  /// 对齐 顶部
+  Widget alignTop() => align(Alignment.topCenter);
+
+  /// 对齐 底部
+  Widget alignBottom() => align(Alignment.bottomCenter);
+
   /// Applies a parent to a child
   /// ```dart
   /// final parentWidget = ({required Widget child}) => Styled.widget(child: child)
@@ -662,6 +688,24 @@ extension WidgetExtensions on Widget {
           );
   }
 
+  /// 取消父级约束
+  Widget unconstrained({
+    Key? key,
+    TextDirection? textDirection,
+    AlignmentGeometry alignment = Alignment.center,
+    Axis? constrainedAxis,
+    Clip clipBehavior = Clip.none,
+  }) =>
+      UnconstrainedBox(
+        key: key,
+        textDirection: textDirection,
+        alignment: alignment,
+        constrainedAxis: constrainedAxis,
+        clipBehavior: clipBehavior,
+        child: this,
+      );
+
+  /// 盒子装饰器
   Widget decorated({
     Key? key,
     Color? color,
@@ -1281,6 +1325,27 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  // 墨水纹
+  Widget inkWell({
+    Key? key,
+    Function()? onTap,
+    double? borderRadius,
+  }) =>
+      Material(
+        color: Colors.transparent,
+        child: Ink(
+          child: InkWell(
+            borderRadius: borderRadius != null
+                ? BorderRadius.all(
+                    Radius.circular(borderRadius),
+                  )
+                : null,
+            onTap: onTap ?? () {},
+            child: this,
+          ),
+        ),
+      );
+
   Widget safeArea({
     Key? key,
     bool top = true,
@@ -1393,6 +1458,40 @@ extension WidgetExtensions on Widget {
         onScaleEnd: onScaleEnd,
         onScaleUpdate: onScaleUpdate,
         behavior: behavior,
+        excludeFromSemantics: excludeFromSemantics,
+        dragStartBehavior: dragStartBehavior,
+        child: this,
+      );
+
+  /// 手势
+  Widget onTap(
+    GestureTapCallback? onTap, {
+    Key? key,
+    HitTestBehavior? behavior,
+    bool excludeFromSemantics = false,
+    DragStartBehavior dragStartBehavior = DragStartBehavior.start,
+  }) =>
+      GestureDetector(
+        key: key,
+        onTap: onTap,
+        behavior: behavior ?? HitTestBehavior.opaque,
+        excludeFromSemantics: excludeFromSemantics,
+        dragStartBehavior: dragStartBehavior,
+        child: this,
+      );
+
+  /// 长按手势
+  Widget onLongPress(
+    GestureTapCallback? onLongPress, {
+    Key? key,
+    HitTestBehavior? behavior,
+    bool excludeFromSemantics = false,
+    DragStartBehavior dragStartBehavior = DragStartBehavior.start,
+  }) =>
+      GestureDetector(
+        key: key,
+        onLongPress: onLongPress,
+        behavior: behavior ?? HitTestBehavior.opaque,
         excludeFromSemantics: excludeFromSemantics,
         dragStartBehavior: dragStartBehavior,
         child: this,
