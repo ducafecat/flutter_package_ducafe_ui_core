@@ -1,7 +1,7 @@
 part of '../ducafe_ui_core.dart';
 
 /// theme 主题颜色扩展
-/// `context.colors.primary`
+/// `context.colors.primary` 可以这样使用
 extension ThemeColorsExtensions on BuildContext {
   // ignore: library_private_types_in_public_api
   _ThemeColors get colors => _ThemeColors(
@@ -26,17 +26,21 @@ extension ThemeColorsExtensions on BuildContext {
         shadow: _shadowColor,
       );
 
+  // 获取当前主题
   ThemeData get _theme => Theme.of(this);
 
+  // 获取颜色方案
   ColorScheme get _colorScheme => _theme.colorScheme;
-  // primary
+
+  // 主要颜色
   Color get _primaryColor => _theme.primaryColor;
   Color get _primaryColorLight => _theme.primaryColorLight;
   Color get _primaryColorDark => _theme.primaryColorDark;
 
-  // secondary
+  // 次要颜色
   Color get _secondaryHeaderColor => _theme.secondaryHeaderColor;
 
+  // 其他主题颜色
   Color get _canvasColor => _theme.canvasColor;
   Color get _scaffoldBackgroundColor => _theme.scaffoldBackgroundColor;
   Color get _cardColor => _theme.cardColor;

@@ -2,6 +2,7 @@ part of '../ducafe_ui_core.dart';
 
 typedef GestureOnTapChangeCallback = void Function(bool tapState);
 
+/// Widget 扩展
 extension WidgetExtensions on Widget {
   _AnimatedModel _getAnimation(BuildContext context) {
     final _AnimatedModel? animation =
@@ -14,6 +15,7 @@ extension WidgetExtensions on Widget {
   }
 
   /// animated all properties before this method
+  /// 动画所有属性
   Widget animate(
     Duration duration,
     Curve curve, {
@@ -65,6 +67,7 @@ extension WidgetExtensions on Widget {
   Widget parent(Widget Function({required Widget child}) parent) =>
       parent(child: this);
 
+  /// 内间距
   Widget padding({
     Key? key,
     double? all,
@@ -123,6 +126,7 @@ extension WidgetExtensions on Widget {
   /// 内间距 纵向
   Widget paddingVertical(double val) => padding(vertical: val);
 
+  /// 内间距 方向
   Widget paddingDirectional({
     Key? key,
     double? all,
@@ -211,6 +215,7 @@ extension WidgetExtensions on Widget {
   }) =>
       SliverToBoxAdapter(key: key, child: this);
 
+  /// 透明度
   Widget opacity(
     double opacity, {
     Key? key,
@@ -237,6 +242,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 舞台
   Widget offstage({
     Key? key,
     bool offstage = true,
@@ -247,6 +253,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 对齐
   Widget alignment(
     AlignmentGeometry alignment, {
     Key? key,
@@ -271,6 +278,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 背景颜色
   Widget backgroundColor(
     Color color, {
     Key? key,
@@ -294,6 +302,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 背景图片
   Widget backgroundImage(
     DecorationImage image, {
     Key? key,
@@ -317,6 +326,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 背景渐变
   Widget backgroundGradient(
     Gradient gradient, {
     Key? key,
@@ -340,6 +350,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 背景线性渐变
   Widget backgroundLinearGradient({
     Key? key,
     AlignmentGeometry begin = Alignment.centerLeft,
@@ -379,6 +390,7 @@ extension WidgetExtensions on Widget {
           );
   }
 
+  /// 背景径向渐变
   Widget backgroundRadialGradient({
     Key? key,
     AlignmentGeometry center = Alignment.center,
@@ -422,6 +434,7 @@ extension WidgetExtensions on Widget {
           );
   }
 
+  /// 背景扫光渐变
   Widget backgroundSweepGradient({
     Key? key,
     AlignmentGeometry center = Alignment.center,
@@ -463,6 +476,7 @@ extension WidgetExtensions on Widget {
           );
   }
 
+  /// 背景混合模式
   Widget backgroundBlendMode(
     BlendMode blendMode, {
     Key? key,
@@ -486,6 +500,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 背景模糊
   Widget backgroundBlur(
     double sigma, {
     Key? key,
@@ -512,6 +527,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 圆角
   Widget borderRadius({
     Key? key,
     double? all,
@@ -548,6 +564,7 @@ extension WidgetExtensions on Widget {
           );
   }
 
+  /// 圆角方向
   Widget borderRadiusDirectional({
     Key? key,
     double? all,
@@ -584,6 +601,7 @@ extension WidgetExtensions on Widget {
           );
   }
 
+  /// 圆角矩形
   Widget clipRRect({
     Key? key,
     double? all,
@@ -625,6 +643,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 矩形
   Widget clipRect({
     Key? key,
     CustomClipper<Rect>? clipper,
@@ -637,11 +656,13 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 椭圆
   Widget clipOval({Key? key}) => ClipOval(
         key: key,
         child: this,
       );
 
+  /// 边框
   Widget border({
     Key? key,
     double? all,
@@ -750,10 +771,11 @@ extension WidgetExtensions on Widget {
           );
   }
 
+  /// 阴影透明度曲线
   double _elevationOpacityCurve(double x) =>
       pow(x, 1 / 16) / sqrt(pow(x, 2) + 2) + 0.2;
 
-  // TODO: Animate elevation
+  /// 阴影
   Widget elevation(
     double elevation, {
     Key? key,
@@ -769,6 +791,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 新拟态
   Widget neumorphism({
     Key? key,
     required double elevation,
@@ -843,6 +866,7 @@ extension WidgetExtensions on Widget {
           );
   }
 
+  /// 盒子阴影
   Widget boxShadow({
     Key? key,
     Color color = const Color(0xFF000000),
@@ -942,6 +966,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 约束 宽度
   Widget width(
     double width, {
     Key? key,
@@ -965,6 +990,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 约束 高度
   Widget height(
     double height, {
     Key? key,
@@ -1038,7 +1064,7 @@ extension WidgetExtensions on Widget {
               builder: (context) => this,
             );
 
-  // TODO: RotatedBox
+  /// 旋转
   Widget rotate({
     Key? key,
     required double angle,
@@ -1071,6 +1097,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 缩放
   Widget scale({
     Key? key,
     double? all,
@@ -1109,6 +1136,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 平移
   Widget translate({
     Key? key,
     required Offset offset,
@@ -1136,6 +1164,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 变换
   Widget transform({
     Key? key,
     required Matrix4 transform,
@@ -1227,6 +1256,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 扩展
   Widget expanded({
     Key? key,
     int flex = 1,
@@ -1237,6 +1267,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 弹性
   Widget flexible({
     Key? key,
     int flex = 1,
@@ -1249,6 +1280,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 位置
   Widget positioned({
     Key? key,
     double? left,
@@ -1287,6 +1319,7 @@ extension WidgetExtensions on Widget {
               child: this,
             );
 
+  /// 位置方向
   Widget positionedDirectional({
     Key? key,
     double? start,
@@ -1346,6 +1379,7 @@ extension WidgetExtensions on Widget {
         ),
       );
 
+  /// 安全区域
   Widget safeArea({
     Key? key,
     bool top = true,
@@ -1362,6 +1396,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 语义标签
   Widget semanticsLabel(
     String label, {
     Key? key,
@@ -1372,6 +1407,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 手势
   Widget gestures({
     Key? key,
     GestureOnTapChangeCallback? onTapChange,
@@ -1497,7 +1533,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
-  // TODO: FEATURE: animate aspectRatio widget
+  /// 比例
   Widget aspectRatio({
     Key? key,
     required double aspectRatio,
@@ -1508,7 +1544,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
-  // TODO: FEATURE: animate center widget
+  /// 居中
   Widget center({
     Key? key,
     double? widthFactor,
@@ -1521,7 +1557,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
-  // TODO: FEATURE: animate fittedBox
+  /// 适配
   Widget fittedBox({
     Key? key,
     BoxFit fit = BoxFit.contain,
@@ -1534,7 +1570,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
-  // TODO: FEATURE: animate FractionallySizedBox
+  /// 适配
   Widget fractionallySizedBox({
     Key? key,
     AlignmentGeometry alignment = Alignment.center,
@@ -1572,6 +1608,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 限制
   Widget limitedBox({
     Key? key,
     double maxWidth = double.infinity,
@@ -1584,6 +1621,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 材料
   Widget material({
     Key? key,
     MaterialType type = MaterialType.canvas,
@@ -1612,6 +1650,7 @@ extension WidgetExtensions on Widget {
         child: this,
       );
 
+  /// 鼠标区域
   Widget mouseRegion({
     Key? key,
     void Function(PointerEnterEvent)? onEnter,

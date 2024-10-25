@@ -58,72 +58,278 @@ extension ThemesExtensions on BuildContext {
         segmentedButton: _segmentedButtonTheme,
       );
 
+  /// 获取当前主题数据
+  ///
+  /// 返回: 当前的 ThemeData 对象
   ThemeData get _themeData => Theme.of(this);
 
+  /// 获取文本主题
+  ///
+  /// 返回: 当前主题的 TextTheme 对象
   TextTheme get _textTheme => _themeData.textTheme;
+
+  /// 获取按钮主题数据
+  ///
+  /// 返回: 当前主题的 ButtonThemeData 对象
   ButtonThemeData get _buttonTheme => _themeData.buttonTheme;
+
+  /// 获取切换按钮主题数据
+  ///
+  /// 返回: 当前主题的 ToggleButtonsThemeData 对象
   ToggleButtonsThemeData get _toggleButtonsTheme =>
       _themeData.toggleButtonsTheme;
+
+  /// 获取主要文本主题
+  ///
+  /// 返回: 当前主题的主要 TextTheme 对象
   TextTheme get _primaryTextTheme => _themeData.primaryTextTheme;
+
+  /// 获取图标主题数据
+  ///
+  /// 返回: 当前主题的 IconThemeData 对象
   IconThemeData get _iconTheme => _themeData.iconTheme;
+
+  /// 获取输入装饰主题
+  ///
+  /// 返回: 当前主题的 InputDecorationTheme 对象
   InputDecorationTheme get _inputDecorationTheme =>
       _themeData.inputDecorationTheme;
+
+  /// 获取主要图标主题数据
+  ///
+  /// 返回: 当前主题的主要 IconThemeData 对象
   IconThemeData get _primaryIconTheme => _themeData.primaryIconTheme;
+
+  /// 获取滑块主题数据
+  ///
+  /// 返回: 当前主题的 SliderThemeData 对象
   SliderThemeData get _sliderTheme => _themeData.sliderTheme;
+
+  /// 获取标签栏主题
+  ///
+  /// 返回: 当前主题的 TabBarTheme 对象
   TabBarTheme get _tabBarTheme => _themeData.tabBarTheme;
+
+  /// 获取工具提示主题数据
+  ///
+  /// 返回: 当前主题的 TooltipThemeData 对象
   TooltipThemeData get _tooltipTheme => _themeData.tooltipTheme;
+
+  /// 获取卡片主题
+  ///
+  /// 返回: 当前主题的 CardTheme 对象
   CardTheme get _cardTheme => _themeData.cardTheme;
+
+  /// 获取芯片主题数据
+  ///
+  /// 返回: 当前主题的 ChipThemeData 对象
   ChipThemeData get _chipTheme => _themeData.chipTheme;
+
+  /// 获取应用栏主题
+  ///
+  /// 返回: 当前主题的 AppBarTheme 对象
   AppBarTheme get _appBarTheme => _themeData.appBarTheme;
+
+  /// 获取滚动条主题数据
+  ///
+  /// 返回: 当前主题的 ScrollbarThemeData 对象
   ScrollbarThemeData get _scrollbarTheme => _themeData.scrollbarTheme;
+
+  /// 获取底部应用栏主题
+  ///
+  /// 返回: 当前主题的 BottomAppBarTheme 对象
   BottomAppBarTheme get _bottomAppBarTheme => _themeData.bottomAppBarTheme;
+
+  /// 获取对话框主题
+  ///
+  /// 返回: 当前主题的 DialogTheme 对象
   DialogTheme get _dialogTheme => _themeData.dialogTheme;
+
+  /// 获取浮动操作按钮主题数据
+  ///
+  /// 返回: 当前主题的 FloatingActionButtonThemeData 对象
   FloatingActionButtonThemeData get _floatingActionButtonTheme =>
       _themeData.floatingActionButtonTheme;
+
+  /// 获取导航栏主题数据
+  ///
+  /// 返回: 当前主题的 NavigationRailThemeData 对象
   NavigationRailThemeData get _navigationRailTheme =>
       _themeData.navigationRailTheme;
+
+  /// 获取 Cupertino 覆盖主题数据
+  ///
+  /// 返回: 当前主题的 NoDefaultCupertinoThemeData 对象，可能为 null
   NoDefaultCupertinoThemeData? get _cupertinoOverrideTheme =>
       _themeData.cupertinoOverrideTheme;
+
+  /// 获取 Snackbar 主题数据
+  ///
+  /// 返回: 当前主题的 SnackBarThemeData 对象
   SnackBarThemeData get _snackBarTheme => _themeData.snackBarTheme;
+
+  /// 获取底部表单主题数据
+  ///
+  /// 返回: 当前主题的 BottomSheetThemeData 对象
   BottomSheetThemeData get _bottomSheetTheme => _themeData.bottomSheetTheme;
+
+  /// 获取弹出菜单主题数据
+  ///
+  /// 返回: 当前主题的 PopupMenuThemeData 对象
   PopupMenuThemeData get _popupMenuTheme => _themeData.popupMenuTheme;
+
+  /// 获取横幅主题数据
+  ///
+  /// 返回: 当前主题的 MaterialBannerThemeData 对象
   MaterialBannerThemeData get _bannerTheme => _themeData.bannerTheme;
+
+  /// 获取分隔线主题数据
+  ///
+  /// 返回: 当前主题的 DividerThemeData 对象
   DividerThemeData get _dividerTheme => _themeData.dividerTheme;
+
+  /// 获取按钮栏主题数据
+  ///
+  /// 返回: 当前主题的 ButtonBarThemeData 对象
   ButtonBarThemeData get _buttonBarTheme => _themeData.buttonBarTheme;
+
+  /// 获取底部导航栏主题数据
+  ///
+  /// 返回: 当前主题的 BottomNavigationBarThemeData 对象
   BottomNavigationBarThemeData get _bottomNavigationBarTheme =>
       _themeData.bottomNavigationBarTheme;
+
+  /// 获取时间选择器主题数据
+  ///
+  /// 返回: 当前主题的 TimePickerThemeData 对象
   TimePickerThemeData get _timePickerTheme => _themeData.timePickerTheme;
+
+  /// 获取文本按钮主题数据
+  ///
+  /// 返回: 当前主题的 TextButtonThemeData 对象
   TextButtonThemeData get _textButtonTheme => _themeData.textButtonTheme;
+
+  /// 获取凸起按钮主题数据
+  ///
+  /// 返回: 当前主题的 ElevatedButtonThemeData 对象
   ElevatedButtonThemeData get _elevatedButtonTheme =>
       _themeData.elevatedButtonTheme;
+
+  /// 获取轮廓按钮主题数据
+  ///
+  /// 返回: 当前主题的 OutlinedButtonThemeData 对象
   OutlinedButtonThemeData get _outlinedButtonTheme =>
       _themeData.outlinedButtonTheme;
+
+  /// 获取文本选择主题数据
+  ///
+  /// 返回: 当前主题的 TextSelectionThemeData 对象
   TextSelectionThemeData get _textSelectionTheme =>
       _themeData.textSelectionTheme;
+
+  /// 获取数据表格主题数据
+  ///
+  /// 返回: 当前主题的 DataTableThemeData 对象
   DataTableThemeData get _dataTableTheme => _themeData.dataTableTheme;
+
+  /// 获取复选框主题数据
+  ///
+  /// 返回: 当前主题的 CheckboxThemeData 对象
   CheckboxThemeData get _checkboxTheme => _themeData.checkboxTheme;
+
+  /// 获取单选按钮主题数据
+  ///
+  /// 返回: 当前主题的 RadioThemeData 对象
   RadioThemeData get _radioTheme => _themeData.radioTheme;
+
+  /// 获取开关主题数据
+  ///
+  /// 返回: 当前主题的 SwitchThemeData 对象
   SwitchThemeData get _switchTheme => _themeData.switchTheme;
+
+  /// 获取徽章主题数据
+  ///
+  /// 返回: 当前主题的 BadgeThemeData 对象
   BadgeThemeData get _badgeTheme => _themeData.badgeTheme;
+
+  /// 获取抽屉主题数据
+  ///
+  /// 返回: 当前主题的 DrawerThemeData 对象
   DrawerThemeData get _drawerTheme => _themeData.drawerTheme;
+
+  /// 获取下拉菜单主题数据
+  ///
+  /// 返回: 当前主题的 DropdownMenuThemeData 对象
   DropdownMenuThemeData get _dropdownMenuTheme => _themeData.dropdownMenuTheme;
+
+  /// 获取展开面板主题数据
+  ///
+  /// 返回: 当前主题的 ExpansionTileThemeData 对象
   ExpansionTileThemeData get _expansionTileTheme =>
       _themeData.expansionTileTheme;
+
+  /// 获取主题扩展
+  ///
+  /// 返回: 当前主题的扩展 Map
   Map<Object, ThemeExtension<dynamic>> get _extensions => _themeData.extensions;
+
+  /// 获取填充按钮主题数据
+  ///
+  /// 返回: 当前主题的 FilledButtonThemeData 对象
   FilledButtonThemeData get _filledButtonTheme => _themeData.filledButtonTheme;
+
+  /// 获取图标按钮主题数据
+  ///
+  /// 返回: 当前主题的 IconButtonThemeData 对象
   IconButtonThemeData get _iconButtonTheme => _themeData.iconButtonTheme;
+
+  /// 获取列表项主题数据
+  ///
+  /// 返回: 当前主题的 ListTileThemeData 对象
   ListTileThemeData get _listTileTheme => _themeData.listTileTheme;
+
+  /// 获取菜单主题数据
+  ///
+  /// 返回: 当前主题的 MenuThemeData 对象
   MenuThemeData get _menuTheme => _themeData.menuTheme;
+
+  /// 获取菜单栏主题数据
+  ///
+  /// 返回: 当前主题的 MenuBarThemeData 对象
   MenuBarThemeData get _menuBarTheme => _themeData.menuBarTheme;
+
+  /// 获取菜单按钮主题数据
+  ///
+  /// 返回: 当前主题的 MenuButtonThemeData 对象
   MenuButtonThemeData get _menuButtonTheme => _themeData.menuButtonTheme;
+
+  /// 获取导航栏主题数据
+  ///
+  /// 返回: 当前主题的 NavigationBarThemeData 对象
   NavigationBarThemeData get _navigationBarTheme =>
       _themeData.navigationBarTheme;
+
+  /// 获取导航抽屉主题数据
+  ///
+  /// 返回: 当前主题的 NavigationDrawerThemeData 对象
   NavigationDrawerThemeData get _navigationDrawerTheme =>
       _themeData.navigationDrawerTheme;
+
+  /// 获取页面转换主题
+  ///
+  /// 返回: 当前主题的 PageTransitionsTheme 对象
   PageTransitionsTheme get _pageTransitionsTheme =>
       _themeData.pageTransitionsTheme;
+
+  /// 获取进度指示器主题数据
+  ///
+  /// 返回: 当前主题的 ProgressIndicatorThemeData 对象
   ProgressIndicatorThemeData get _progressIndicatorTheme =>
       _themeData.progressIndicatorTheme;
+
+  /// 获取分段按钮主题数据
+  ///
+  /// 返回: 当前主题的 SegmentedButtonThemeData 对象
   SegmentedButtonThemeData get _segmentedButtonTheme =>
       _themeData.segmentedButtonTheme;
 }

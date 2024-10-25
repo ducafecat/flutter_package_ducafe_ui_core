@@ -1,5 +1,6 @@
 part of '../ducafe_ui_core.dart';
 
+/// TextSpan 文本扩展
 extension TextSpanExtensions<T extends TextSpan> on T {
   T copyWith({
     TextStyle? style,
@@ -41,48 +42,92 @@ extension TextSpanExtensions<T extends TextSpan> on T {
             ),
       );
 
+  /// 将文本设置为粗体
+  ///
+  /// 返回: 应用了粗体样式的 TextSpan 对象
   T bold() => this.copyWith(
         style: (style ?? const TextStyle()).copyWith(
           fontWeight: FontWeight.bold,
         ),
       );
 
+  /// 将文本设置为斜体
+  ///
+  /// 返回: 应用了斜体样式的 TextSpan 对象
   T italic() => this.copyWith(
         style: (style ?? const TextStyle()).copyWith(
           fontStyle: FontStyle.italic,
         ),
       );
 
+  /// 设置文本的字体粗细
+  ///
+  /// 参数:
+  /// - fontWeight: 字体粗细
+  ///
+  /// 返回: 应用了新字体粗细的 TextSpan 对象
   T fontWeight(FontWeight fontWeight) => this.copyWith(
         style: (style ?? const TextStyle()).copyWith(
           fontWeight: fontWeight,
         ),
       );
 
+  /// 设置文本的字体大小
+  ///
+  /// 参数:
+  /// - size: 字体大小
+  ///
+  /// 返回: 应用了新字体大小的 TextSpan 对象
   T fontSize(double size) => this.copyWith(
         style: (style ?? const TextStyle()).copyWith(
           fontSize: size,
         ),
       );
 
+  /// 设置文本的字体系列
+  ///
+  /// 参数:
+  /// - font: 字体系列名称
+  ///
+  /// 返回: 应用了新字体系列的 TextSpan 对象
   T fontFamily(String font) => this.copyWith(
         style: (style ?? const TextStyle()).copyWith(
           fontFamily: font,
         ),
       );
 
+  /// 设置文本的字母间距
+  ///
+  /// 参数:
+  /// - space: 字母间距
+  ///
+  /// 返回: 应用了新字母间距的 TextSpan 对象
   T letterSpacing(double space) => this.copyWith(
         style: (style ?? const TextStyle()).copyWith(
           letterSpacing: space,
         ),
       );
 
+  /// 设置文本的单词间距
+  ///
+  /// 参数:
+  /// - space: 单词间距
+  ///
+  /// 返回: 应用了新单词间距的 TextSpan 对象
   T wordSpacing(double space) => this.copyWith(
         style: (style ?? const TextStyle()).copyWith(
           wordSpacing: space,
         ),
       );
 
+  /// 为文本添加阴影效果
+  ///
+  /// 参数:
+  /// - color: 阴影颜色，默认为半透明黑色
+  /// - blurRadius: 阴影的模糊半径，默认为 0.0
+  /// - offset: 阴影的偏移量，默认为 Offset.zero
+  ///
+  /// 返回: 应用了阴影效果的 TextSpan 对象
   T textShadow({
     Color color = const Color(0x33000000),
     double blurRadius = 0.0,
@@ -100,9 +145,24 @@ extension TextSpanExtensions<T extends TextSpan> on T {
         ),
       );
 
+  /// 计算立体效果的不透明度曲线
+  ///
+  /// 参数:
+  /// - x: 输入值
+  ///
+  /// 返回: 计算后的不透明度值
   double _elevationOpacityCurve(double x) =>
       pow(x, 1 / 16) / sqrt(pow(x, 2) + 2) + 0.2;
 
+  /// 为文本添加立体效果
+  ///
+  /// 参数:
+  /// - elevation: 立体效果的高度
+  /// - angle: 阴影的角度，默认为 0.0
+  /// - color: 阴影颜色，默认为半透明黑色
+  /// - opacityRatio: 不透明度比率，默认为 1.0
+  ///
+  /// 返回: 应用了立体效果的 TextSpan 对象
   T textElevation(
     double elevation, {
     double angle = 0.0,
@@ -126,12 +186,24 @@ extension TextSpanExtensions<T extends TextSpan> on T {
     );
   }
 
+  /// 设置文本颜色
+  ///
+  /// 参数:
+  /// - color: 文本颜色
+  ///
+  /// 返回: 应用了新颜色的 TextSpan 对象
   T textColor(Color color) => this.copyWith(
         style: (style ?? const TextStyle()).copyWith(
           color: color,
         ),
       );
 
+  /// 设置文本基线
+  ///
+  /// 参数:
+  /// - textBaseline: 文本基线
+  ///
+  /// 返回: 应用了新文本基线的 TextSpan 对象
   T textBaseline(TextBaseline textBaseline) => this.copyWith(
         style: (style ?? const TextStyle()).copyWith(
           textBaseline: textBaseline,

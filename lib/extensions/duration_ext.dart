@@ -2,34 +2,34 @@ part of '../ducafe_ui_core.dart';
 
 /// 返回时间差 [Duration] 的扩展
 extension DurationExtensions on num {
-  /// Converts the number into a [Duration] in microseconds
+  /// 将数字转换为微秒的 [Duration]
   Duration get microseconds => Duration(microseconds: round());
 
-  /// Converts the number into a [Duration] in milliseconds
+  /// 将数字转换为毫秒的 [Duration]
   Duration get milliseconds => Duration(milliseconds: round());
 
-  /// Converts the number into a [Duration] in seconds
+  /// 将数字转换为秒的 [Duration]
   Duration get seconds => Duration(seconds: round());
 
-  /// Converts the number into a [Duration] in minutes
+  /// 将数字转换为分钟的 [Duration]
   Duration get minutes => Duration(minutes: round());
 
-  /// Converts the number into a [Duration] in hours
+  /// 将数字转换为小时的 [Duration]
   Duration get hours => Duration(hours: round());
 
-  /// Converts the number into a [Duration] in days
+  /// 将数字转换为天的 [Duration]
   Duration get days => Duration(days: round());
 
-  /// Converts the number into a [Duration] in months
+  /// 将数字转换为月的 [Duration]（假设一个月为30天）
   Duration get months => Duration(days: 30 * round());
 
-  /// Converts the number into a [Duration] in quarters
+  /// 将数字转换为季度的 [Duration]（假设一个季度为90天）
   Duration get quarters => Duration(days: 90 * round());
 
-  /// Converts the number into a [Duration] in quadrimesters
+  /// 将数字转换为四个月的 [Duration]（假设四个月为120天）
   Duration get quadrimesters => Duration(days: 120 * round());
 
-  /// Converts the number into a [Duration] in years
+  /// 将数字转换为年的 [Duration]（假设一年为365天）
   Duration get years => Duration(days: 365 * round());
 }
 
