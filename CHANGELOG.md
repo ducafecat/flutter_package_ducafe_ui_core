@@ -1,3 +1,3 @@
-## 0.0.1
+## 1.0.1
 
-* TODO: Describe initial release.
+- 基础包创建，功能详见介绍。

@@ -1,7 +1,7 @@
 name: ducafe_ui_core
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: "flutter ui core package for ducafecat.com"
+version: 1.0.1
+homepage: https://ducafecat.com
 
 environment:
   sdk: ">=3.4.4 <4.0.0"

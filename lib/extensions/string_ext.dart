@@ -107,4 +107,9 @@ extension StringExtensions on String {
 
   /// 正则检查匹配
   bool hasMatch(String pattern) => RegExp(pattern).hasMatch(this);
+
+  /// 清除 html 标签
+  String get clearHtml {
+    return replaceAll(RegExp(r'<[^>]*>'), '');
+  }
 }
