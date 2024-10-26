@@ -43,15 +43,12 @@ void main() {
   runApp(
     ScreenUtilInit(
       designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
           home: child,
         );
@@ -62,19 +59,76 @@ void main() {
 }
 ```
 
-### Widget 扩展方法
+### Widget 扩展
+
+示例:
 
 ```dart
-Text('Hello')
-  .paddingAll(20)
-  .decorated(
-    color: Colors.blue,
-    borderRadius: BorderRadius.circular(10),
-  )
-  .gestures(
-    onTap: () => print('Tapped!'),
-  );
+// 创建一个居中的文本小部件
+final centeredText = Text('Hello, World!').center();
+
+// 创建一个带有内边距和阴影的卡片
+final styledCard = Text('Card Content')
+    .padding(all: 16)
+    .card(elevation: 4)
+    .boxShadow(blurRadius: 10);
+
+// 创建一个可点击的按钮
+final clickableButton = Text('Click me')
+    .padding(all: 8)
+    .inkWell(onTap: () => print('Button clicked!'));
+
+// 创建一个带有动画效果的缩放小部件
+final animatedWidget = Icon(Icons.star)
+    .scale(all: 1.5)
+    .animate(Duration(milliseconds: 300), Curves.easeInOut);
 ```
+
+扩展:
+
+- animate: 为小部件添加动画效果
+- align: 设置小部件的对齐方式
+- alignCenter: 将小部件居中对齐
+- alignLeft: 将小部件左对齐
+- alignRight: 将小部件右对齐
+- alignTop: 将小部件顶部对齐
+- alignBottom: 将小部件底部对齐
+- parent: 为小部件应用父级小部件
+- padding: 为小部件添加内边距
+- paddingBottom: 为小部件添加底部内边距
+- paddingHorizontal: 为小部件添加水平内边距
+- paddingLeft: 为小部件添加左侧内边距
+- paddingRight: 为小部件添加右侧内边距
+- paddingTop: 为小部件添加顶部内边距
+- paddingVertical: 为小部件添加垂直内边距
+- paddingDirectional: 为小部件添加方向性内边距
+- sliverPadding: 为 Sliver 小部件添加内边距
+- opacity: 设置小部件的不透明度
+- offstage: 控制小部件是否显示
+- neumorphism: 为小部件添加新拟态效果
+- boxShadow: 为小部件添加阴影效果
+- ripple: 为小部件添加涟漪效果
+- rotate: 旋转小部件
+- scale: 缩放小部件
+- translate: 平移小部件
+- transform: 对小部件应用变换
+- overflow: 控制小部件的溢出行为
+- scrollable: 使小部件可滚动
+- expanded: 使小部件在 Flex 容器中扩展
+- flexible: 使小部件在 Flex 容器中灵活调整大小
+- positioned: 在 Stack 中定位小部件
+- positionedDirectional: 在 Stack 中方向性定位小部件
+- inkWell: 为小部件添加墨水效果和点击事件
+- safeArea: 将小部件放置在安全区域内
+- semanticsLabel: 为小部件添加语义标签
+- gestures: 为小部件添加手势识别
+- center: 将小部件居中
+- fittedBox: 调整小部件大小以适应其父级
+- fractionallySizedBox: 根据父级尺寸的比例调整小部件大小
+- card: 将小部件包装在卡片中
+- limitedBox: 限制小部件的最大尺寸
+- material: 将小部件包装在 Material 中
+- mouseRegion: 为小部件添加鼠标交互区域
 
 ### 颜色扩展使用说明
 
@@ -639,77 +693,6 @@ Widget build(BuildContext context) {
 - themes: 获取包含所有主题数据的 \_Themes 对象
 - isDarkMode: 判断应用是否处于深色模式
 - isLightMode: 判断应用是否处于浅色模式
-
-### Widget 扩展
-
-示例:
-
-```dart
-// 创建一个居中的文本小部件
-final centeredText = Text('Hello, World!').center();
-
-// 创建一个带有内边距和阴影的卡片
-final styledCard = Text('Card Content')
-    .padding(all: 16)
-    .card(elevation: 4)
-    .boxShadow(blurRadius: 10);
-
-// 创建一个可点击的按钮
-final clickableButton = Text('Click me')
-    .padding(all: 8)
-    .inkWell(onTap: () => print('Button clicked!'));
-
-// 创建一个带有动画效果的缩放小部件
-final animatedWidget = Icon(Icons.star)
-    .scale(all: 1.5)
-    .animate(Duration(milliseconds: 300), Curves.easeInOut);
-```
-
-扩展:
-
-- animate: 为小部件添加动画效果
-- align: 设置小部件的对齐方式
-- alignCenter: 将小部件居中对齐
-- alignLeft: 将小部件左对齐
-- alignRight: 将小部件右对齐
-- alignTop: 将小部件顶部对齐
-- alignBottom: 将小部件底部对齐
-- parent: 为小部件应用父级小部件
-- padding: 为小部件添加内边距
-- paddingBottom: 为小部件添加底部内边距
-- paddingHorizontal: 为小部件添加水平内边距
-- paddingLeft: 为小部件添加左侧内边距
-- paddingRight: 为小部件添加右侧内边距
-- paddingTop: 为小部件添加顶部内边距
-- paddingVertical: 为小部件添加垂直内边距
-- paddingDirectional: 为小部件添加方向性内边距
-- sliverPadding: 为 Sliver 小部件添加内边距
-- opacity: 设置小部件的不透明度
-- offstage: 控制小部件是否显示
-- neumorphism: 为小部件添加新拟态效果
-- boxShadow: 为小部件添加阴影效果
-- ripple: 为小部件添加涟漪效果
-- rotate: 旋转小部件
-- scale: 缩放小部件
-- translate: 平移小部件
-- transform: 对小部件应用变换
-- overflow: 控制小部件的溢出行为
-- scrollable: 使小部件可滚动
-- expanded: 使小部件在 Flex 容器中扩展
-- flexible: 使小部件在 Flex 容器中灵活调整大小
-- positioned: 在 Stack 中定位小部件
-- positionedDirectional: 在 Stack 中方向性定位小部件
-- inkWell: 为小部件添加墨水效果和点击事件
-- safeArea: 将小部件放置在安全区域内
-- semanticsLabel: 为小部件添加语义标签
-- gestures: 为小部件添加手势识别
-- center: 将小部件居中
-- fittedBox: 调整小部件大小以适应其父级
-- fractionallySizedBox: 根据父级尺寸的比例调整小部件大小
-- card: 将小部件包装在卡片中
-- limitedBox: 限制小部件的最大尺寸
-- material: 将小部件包装在 Material 中
-- mouseRegion: 为小部件添加鼠标交互区域
 
 ### 开发工具
 
