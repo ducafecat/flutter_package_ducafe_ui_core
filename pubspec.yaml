@@ -1,6 +1,6 @@
 name: ducafe_ui_core
-description: "ducafe_ui_core 是一个 Flutter UI 核心库，旨在简化 Flutter 应用程序的 UI 开发。它提供了一系列实用的扩展方法和工具类，包括屏幕适配、Widget 扩展、上下文扩展、字符串扩展等，帮助开发者快速构建美观且响应式的用户界面。"
-version: 1.0.5
+description: "ducafe_ui_core is a Flutter UI core library designed to simplify UI development in Flutter applications. It provides a series of practical extension methods and utility classes, including screen adaptation, Widget extensions, context extensions, string extensions, etc., helping developers quickly build beautiful and responsive user interfaces."
+version: 1.0.6
 homepage: https://ducafecat.com
 repository: https://github.com/ducafecat/flutter_package_ducafe_ui_core
 issue_tracker: https://github.com/ducafecat/flutter_package_ducafe_ui_core/issues
