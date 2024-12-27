@@ -75,6 +75,7 @@ class UI {
     String? semanticsLabel,
     TextWidthBasis? textWidthBasis,
     bool animate = false,
+    TextScaler? textScaler,
   }) =>
       animate
           ? _AnimatedTextContainer(
@@ -88,7 +89,7 @@ class UI {
               style: style,
               textAlign: textAlign,
               textDirection: textDirection,
-              textScaleFactor: textScaleFactor,
+              textScaler: textScaler,
               textWidthBasis: textWidthBasis,
             )
           : Text(
@@ -102,9 +103,7 @@ class UI {
               style: style,
               textAlign: textAlign,
               textDirection: textDirection,
-              textScaler: textScaleFactor == null
-                  ? null
-                  : TextScaler.linear(textScaleFactor),
+              textScaler: textScaler,
               textWidthBasis: textWidthBasis,
             );
 

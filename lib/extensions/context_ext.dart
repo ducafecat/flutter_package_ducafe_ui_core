@@ -19,7 +19,7 @@ extension ContextExtensions on BuildContext {
   double get statusBarHeight => ScreenUtil().statusBarHeight;
 
   /// 获取文本缩放因子
-  double get textScaleFactor => ScreenUtil().textScaleFactor;
+  // double get textScaleFactor => ScreenUtil().textScaleFactor;
 
   /// 获取宽度的缩放因子
   double get scaleWidth => ScreenUtil().scaleWidth;

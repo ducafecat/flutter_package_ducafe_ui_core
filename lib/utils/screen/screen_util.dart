@@ -239,7 +239,7 @@ class ScreenUtil {
   /// 获取文本缩放因子
   ///
   /// 返回: 每个逻辑像素的字体像素数，即字体的缩放比例
-  double get textScaleFactor => _data.textScaleFactor;
+  // double get textScaleFactor => _data.textScaleFactor;
 
   /// 获取设备的像素密度
   ///

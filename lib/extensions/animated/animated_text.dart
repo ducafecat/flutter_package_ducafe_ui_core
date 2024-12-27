@@ -1,59 +1,20 @@
 part of '../../ducafe_ui_core.dart';
 
-// TODO: why extend text
 class _AnimatedTextContainer extends Text {
-  @override
-  final String data;
-  @override
-  final TextStyle? style;
-  @override
-  final StrutStyle? strutStyle;
-  @override
-  final TextAlign? textAlign;
-  @override
-  final TextDirection? textDirection;
-  @override
-  final Locale? locale;
-  @override
-  final bool? softWrap;
-  @override
-  final TextOverflow? overflow;
-  @override
-  final double? textScaleFactor;
-  @override
-  final int? maxLines;
-  @override
-  final String? semanticsLabel;
-  @override
-  final TextWidthBasis? textWidthBasis;
-
   const _AnimatedTextContainer(
-    this.data, {
-    this.locale,
-    this.maxLines,
-    this.overflow,
-    this.semanticsLabel,
-    this.softWrap,
-    this.strutStyle,
-    this.style,
-    this.textAlign,
-    this.textDirection,
-    this.textScaleFactor,
-    this.textWidthBasis,
-  }) : super(
-          data,
-          locale: locale,
-          maxLines: maxLines,
-          overflow: overflow,
-          semanticsLabel: semanticsLabel,
-          softWrap: softWrap,
-          strutStyle: strutStyle,
-          style: style,
-          textAlign: textAlign,
-          textDirection: textDirection,
-          textScaleFactor: textScaleFactor,
-          textWidthBasis: textWidthBasis,
-        );
+    super.data, {
+    super.locale,
+    super.maxLines,
+    super.overflow,
+    super.semanticsLabel,
+    super.softWrap,
+    super.strutStyle,
+    super.style,
+    super.textAlign,
+    super.textDirection,
+    super.textScaler,
+    super.textWidthBasis,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +26,7 @@ class _AnimatedTextContainer extends Text {
     // assert(
     //     animation != null, 'You can`t animate without specifying an animation');
     return _AnimatedText(
-      data,
+      data ?? '',
       duration: animation.duration,
       curve: animation.curve,
       locale: locale,
@@ -77,7 +38,7 @@ class _AnimatedTextContainer extends Text {
       style: style,
       textAlign: textAlign,
       textDirection: textDirection,
-      textScaleFactor: textScaleFactor,
+      textScaler: textScaler,
       textWidthBasis: textWidthBasis,
     );
   }
@@ -89,7 +50,6 @@ class _AnimatedText extends ImplicitlyAnimatedWidget {
   /// The [curve] and [duration] arguments must not be null.
   const _AnimatedText(
     this.data, {
-    super.key,
     this.locale,
     this.maxLines,
     this.overflow,
@@ -99,11 +59,10 @@ class _AnimatedText extends ImplicitlyAnimatedWidget {
     this.style,
     this.textAlign,
     this.textDirection,
-    this.textScaleFactor,
+    this.textScaler,
     this.textWidthBasis,
     super.curve,
     required super.duration,
-    super.onEnd,
   });
 
   final String data;
@@ -114,7 +73,7 @@ class _AnimatedText extends ImplicitlyAnimatedWidget {
   final Locale? locale;
   final bool? softWrap;
   final TextOverflow? overflow;
-  final double? textScaleFactor;
+  final TextScaler? textScaler;
   final int? maxLines;
   final String? semanticsLabel;
   final TextWidthBasis? textWidthBasis;
@@ -133,13 +92,12 @@ class _AnimatedTextState extends AnimatedWidgetBaseState<_AnimatedText> {
   IntTween? _maxLines;
   ColorTween? _color;
   ColorTween? _decorationColor;
-  // TODO: animate background and foreground?
 
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {
     _textScaleFactor = visitor(
       _textScaleFactor,
-      widget.textScaleFactor,
+      widget.textScaler,
       (dynamic value) => Tween<double>(begin: value as double),
     ) as Tween<double>?;
     _fontSize = visitor(
@@ -202,7 +160,7 @@ class _AnimatedTextState extends AnimatedWidgetBaseState<_AnimatedText> {
         locale: widget.locale,
         softWrap: widget.softWrap,
         overflow: widget.overflow,
-        textScaleFactor: _textScaleFactor?.evaluate(animation),
+        // textScaleFactor: _textScaleFactor?.evaluate(animation),
         maxLines: _maxLines?.evaluate(animation),
         semanticsLabel: widget.semanticsLabel,
         textWidthBasis: widget.textWidthBasis,
@@ -211,6 +169,5 @@ class _AnimatedTextState extends AnimatedWidgetBaseState<_AnimatedText> {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder description) {
     super.debugFillProperties(description);
-    // TODO: debug variables
   }
 }

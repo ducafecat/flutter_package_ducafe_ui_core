@@ -28,7 +28,7 @@ extension TextExtensions<T extends Text> on T {
               semanticsLabel: semanticsLabel ?? this.semanticsLabel,
               softWrap: softWrap ?? this.softWrap,
               textDirection: textDirection ?? this.textDirection,
-              textScaleFactor: textScaleFactor ?? this.textScaleFactor,
+              // textScaleFactor: textScaleFactor ?? this.textScaleFactor,
               textWidthBasis: textWidthBasis ?? this.textWidthBasis,
             )
           : Text(
@@ -42,7 +42,7 @@ extension TextExtensions<T extends Text> on T {
               semanticsLabel: semanticsLabel ?? this.semanticsLabel,
               softWrap: softWrap ?? this.softWrap,
               textDirection: textDirection ?? this.textDirection,
-              textScaleFactor: textScaleFactor ?? this.textScaleFactor,
+              // textScaleFactor: textScaleFactor ?? this.textScaleFactor,
               textWidthBasis: textWidthBasis ?? this.textWidthBasis,
             )) as T;
 

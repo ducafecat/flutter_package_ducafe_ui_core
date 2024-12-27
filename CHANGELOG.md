@@ -1,12 +1,17 @@
+## 1.0.5
+
+- update pub docs
+- add glossy
+
 ## 1.0.4
 
-- 文档更新
+- Documentation updates
 
 ## 1.0.2
 
-- 代码加入注释
-- 编写 README.md 说明
+- Added code comments
+- Created README.md documentation
 
 ## 1.0.1
 
-- 基础包创建，功能详见介绍。
+- Initial package creation, see introduction for features.

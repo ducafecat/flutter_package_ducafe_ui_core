@@ -1,31 +1,13 @@
 part of '../../ducafe_ui_core.dart';
 
-// TODO: why extend icon
 class _AnimatedIconContainer extends Icon {
-  @override
-  final IconData? icon;
-  @override
-  final double? size;
-  @override
-  final Color? color;
-  @override
-  final String? semanticLabel;
-  @override
-  final TextDirection? textDirection;
-
   const _AnimatedIconContainer(
-    this.icon, {
-    this.color,
-    this.semanticLabel,
-    this.size,
-    this.textDirection,
-  }) : super(
-          icon,
-          color: color,
-          semanticLabel: semanticLabel,
-          size: size,
-          textDirection: textDirection,
-        );
+    super.icon, {
+    super.color,
+    super.semanticLabel,
+    super.size,
+    super.textDirection,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +36,6 @@ class _AnimatedIcon extends ImplicitlyAnimatedWidget {
   /// The [curve] and [duration] arguments must not be null.
   const _AnimatedIcon(
     this.icon, {
-    super.key,
     this.color,
     this.semanticLabel,
     this.size,
@@ -105,6 +86,5 @@ class _AnimatedIconState extends AnimatedWidgetBaseState<_AnimatedIcon> {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder description) {
     super.debugFillProperties(description);
-    // TODO: debug
   }
 }
